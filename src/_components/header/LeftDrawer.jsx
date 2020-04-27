@@ -14,12 +14,13 @@ export default function LeftDrawer(props) {
     <div>
       <Drawer anchor={'left'} open={props.showDrawer} onClose={() => props.toggleDrawer('left', false)}>
         <List>
-          {['deployments', 'template'].map((text, index) => (
+          {['deployment', 'deployments', 'template'].map((text, index) => (
             <ListItem button key={text} component={Link} to={"/" + text}
                       onClick={() => props.toggleDrawer('left', false)}>
               <ListItemIcon>
                 {text === 'deployments' && <DeploymentIcon/>}
                 {text === 'template' && <TemplateIcon/>}
+                {text === 'deployment' && <TemplateIcon/>}
               </ListItemIcon>
               <Link to={"/" + text}>
                 <ListItemText primary={text.toUpperCase()}/>
