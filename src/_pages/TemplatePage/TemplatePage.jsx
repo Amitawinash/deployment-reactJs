@@ -5,7 +5,9 @@ import Grid from '@material-ui/core/Grid';
 import Button from '@material-ui/core/Button';
 import TemplateDialog from "../../_components/dialogs/TemplateDialog";
 import {useDispatch} from 'react-redux';
-import {getTemplates} from '../../_actions';
+import {getTemplates, addTemplate as newTemplate} from '../../_actions';
+
+
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -70,7 +72,7 @@ function TemplatePage() {
     }
     setError('')
     setbusy(true)
-    addTemplate(dispatch)({name, versions: versions.map(version => version.value)})
+    newTemplate(dispatch)({name, versions: versions.map(version => version.value)})
   }
 
   const editTemplate = () => {
